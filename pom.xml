@@ -33,6 +33,7 @@
     <repository>
       <id>java-maven-war-app-group</id>
       <url>http://172.31.9.145:8081/repository/java-maven-war-app-group/</url>
+    </repository>
   </repositories>
 
     <distributionManagement>
