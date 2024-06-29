@@ -8,7 +8,7 @@
 	<h1>DevOps Training - Apr 2023 Batch</h1>
 	<h1>This is automated deployment 2</h1>
 	<h1>webhook trigger</h1>
-        <h2>webhook trigger</h2>
+        <h2>checking whether webhook is enabled and trying not to use inventory file from git and checking for auto build</h2>
 	<p>
 		It is now
 		<%= new java.util.Date() %></p>
