@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label 'Master'
+        label 'master'
     }
 
     tools {
@@ -25,10 +25,10 @@ pipeline{
         //     steps{
         //         withSonarQubeEnv("SonarQube") {
         //             sh "${tool("Sonar_4.8")}/bin/sonar-scanner \
-        //             -Dsonar.host.url=http://ec2-13-232-201-247.ap-south-1.compute.amazonaws.com:9000/ \
-        //             -Dsonar.login=sqp_0c07fd0d029a2928a7f9a656ce9486e029a7affa \
-        //             -Dsonar.java.binaries=target \
-        //             -Dsonar.projectKey=java-maven-app"
+        //             -Dsonar.host.url=http://ec2-3-25-175-4.ap-southeast-2.compute.amazonaws.com:9000/ \
+        //             -Dsonar.login=sqp_97a364fc874b05b597e12ca633ec3aa020fba511 \
+        //             -Dsonar.java.binaries=target/ \
+        //             -Dsonar.projectKey=java-maven-war-app"
         //         }
         //     }
         // }
@@ -40,9 +40,6 @@ pipeline{
         }
 
         stage('deployment'){
-            agent{
-                label 'Ansible'
-            }
             steps{
                 sh 'ansible-playbook -i inventory deployment_playbook.yml -e "build_number=${BUILD_NUMBER}"'
             }
