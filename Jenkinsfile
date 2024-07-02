@@ -24,11 +24,11 @@ pipeline{
         stage('Sonar Scan'){
             steps{
                withSonarQubeEnv("SonarQube") {
-                     sh "${tool("Sonar_4.8")}/bin/sonar-scanner \
-                    -Dsonar.host.url=http://ec2-3-25-175-4.ap-southeast-2.compute.amazonaws.com:9000/ \
-                    -Dsonar.login=sqp_97a364fc874b05b597e12ca633ec3aa020fba511 \
-                    -Dsonar.java.binaries=target/ \
-                    -Dsonar.projectKey=java-maven-war-app"
+                   sh "${tool("Sonar_4.6.2")}/bin/sonar-scanner \
+                   -Dsonar.host.url=http://ec2-3-107-72-252.ap-southeast-2.compute.amazonaws.com:9000/ \
+                   -Dsonar.login=sqp_97a364fc874b05b597e12ca633ec3aa020fba511 \
+                   -Dsonar.java.binaries=target/ \
+                   -Dsonar.projectKey=java-maven-war-app"
                }
          }
      }
